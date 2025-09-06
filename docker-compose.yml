@@ -1,0 +1,111 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15.4
+    container_name: coffee_tea_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: coffee_tea_db
+      POSTGRES_USER: coffee_user
+      POSTGRES_PASSWORD: secure_password
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init:/docker-entrypoint-initdb.d
+    networks:
+      - coffee_tea_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U coffee_user -d coffee_tea_db"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Redis Cache
+  redis:
+    image: redis:7.0-alpine
+    container_name: coffee_tea_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - coffee_tea_network
+    command: redis-server --appendonly yes --requirepass ""
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ElasticSearch (for product search)
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.9.0
+    container_name: coffee_tea_elasticsearch
+    restart: unless-stopped
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    networks:
+      - coffee_tea_network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # pgAdmin (Database Administration)
+  pgadmin:
+    image: dpage/pgadmin4:7.5
+    container_name: coffee_tea_pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@coffeetea.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "8080:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - coffee_tea_network
+    depends_on:
+      - postgres
+
+  # Redis Commander (Redis Administration)
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: coffee_tea_redis_commander
+    restart: unless-stopped
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
+    networks:
+      - coffee_tea_network
+    depends_on:
+      - redis
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  elasticsearch_data:
+    driver: local
+  pgadmin_data:
+    driver: local
+
+networks:
+  coffee_tea_network:
+    driver: bridge

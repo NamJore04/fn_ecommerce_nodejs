@@ -1,0 +1,17 @@
+# Chạy all integration tests
+npm run test
+
+# Chạy specific test suites  
+npm run test:auth        # Authentication tests
+npm run test:products    # Product tests
+npm run test:orders      # Order tests
+npm run test:workflows   # E2E workflows
+npm run test:e2e         # End-to-end tests
+npm run test:coverage    # Coverage report
+
+# Chạy comprehensive test suite (Windows)
+.\scripts\run-integration-tests.bat
+
+# Coverage analysis
+npm run test:coverage
+
