@@ -1,0 +1,57 @@
+# Node modules
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+# ⚠️ Chỉ ignore .env và .env.local (cho local development)
+# KHÔNG ignore .env.docker và .env.production (cần cho container)
+.env
+.env.local
+.env.development
+.env.test
+# .env.production  ← COMMENTED OUT - cần cho production builds
+# .env.docker      ← COMMENTED OUT - cần cho Docker builds
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+*.md
+
+# Test files
+tests
+coverage
+*.test.js
+*.spec.js
+
+# CI/CD
+.github
+.gitlab-ci.yml
+
+# Logs
+logs
+*.log
+
+# Uploads (will be volume mounted)
+uploads/*
+
+# Temporary files
+tmp
+temp
+*.tmp
