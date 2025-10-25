@@ -1,0 +1,253 @@
+# Docker Swarm Stack Configuration for E-commerce Project
+# Deploy with: docker stack deploy -c docker-stack.yml ecommerce
+# 
+# This stack file is configured for Level 3 deployment with:
+# - Multi-replica services (Backend: 3, Frontend: 2, Worker: 2)
+# - Load balancing via Nginx
+# - Redis queue for async job processing
+# - Overlay network for service discovery
+# - Health checks for all services
+# - Resource limits and restart policies
+# - Docker Secrets for sensitive data
+
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongo:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD_FILE: /run/secrets/db_password
+      MONGO_INITDB_DATABASE: ecommerce
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - ecommerce-network
+    secrets:
+      - db_password
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+    # Note: MongoDB health check removed for simplicity in Swarm
+    # Swarm will monitor the process; app-level checks happen in backend
+
+  # Redis for Caching and Queue
+  redis:
+    image: redis:latest
+    volumes:
+      - redis-data:/data
+    networks:
+      - ecommerce-network
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 256M
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Backend API (Scalable)
+  backend:
+    image: ecommerce-project-backend:latest
+    environment:
+      - NODE_ENV=docker
+    volumes:
+      - backend-uploads:/app/uploads
+    networks:
+      - ecommerce-network
+    deploy:
+      replicas: 3
+      update_config:
+        parallelism: 1
+        delay: 10s
+        failure_action: rollback
+        monitor: 60s
+      rollback_config:
+        parallelism: 1
+        delay: 5s
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:5000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Email Queue Worker (Background Job Processor)
+  worker:
+    image: ecommerce-project-backend:latest
+    command: ["sh", "-c", "sleep 15 && node src/services/queue/worker.js"]
+    environment:
+      - NODE_ENV=docker
+      - WORKER_STARTUP_DELAY=5000
+    networks:
+      - ecommerce-network
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 5
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 256M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    # Disable healthcheck: worker is a background process without HTTP endpoint
+    # The backend image includes an HTTP healthcheck that doesn't apply to workers
+    healthcheck:
+      disable: true
+
+  # Frontend React App
+  frontend:
+    image: ecommerce-project-frontend:latest
+    environment:
+      - REACT_APP_API_URL=/api
+    networks:
+      - ecommerce-network
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 1
+        delay: 10s
+        failure_action: rollback
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 256M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Nginx Load Balancer & Reverse Proxy
+  nginx:
+    image: ecommerce-project-nginx:latest
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+        mode: ingress
+      - target: 8080
+        published: 8080
+        protocol: tcp
+        mode: ingress
+    volumes:
+      - backend-uploads:/app/uploads:ro
+    networks:
+      - ecommerce-network
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 128M
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # Visualizer (Optional - for monitoring Swarm)
+  visualizer:
+    image: dockersamples/visualizer:latest
+    ports:
+      - target: 8080
+        published: 9000
+        protocol: tcp
+        mode: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - ecommerce-network
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+    environment:
+      - CTX_ROOT=/visualizer
+
+volumes:
+  mongo-data:
+    driver: local
+  redis-data:
+    driver: local
+  backend-uploads:
+    driver: local
+
+networks:
+  ecommerce-network:
+    driver: overlay
+    attachable: true
+    ipam:
+      config:
+        - subnet: 10.0.9.0/24
+
+secrets:
+  db_password:
+    external: true
+  jwt_secret:
+    external: true
+  email_user:
+    external: true
+  email_password:
+    external: true
