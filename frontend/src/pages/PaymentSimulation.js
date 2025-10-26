@@ -17,7 +17,7 @@ const banks = [
 const PaymentSimulation = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const [step, setStep] = useState(1);
   const [selectedBank, setSelectedBank] = useState(null);
   const [otp, setOtp] = useState('');
@@ -61,7 +61,7 @@ const PaymentSimulation = () => {
 
   const handleOTPSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!otp || otp.length < 6) {
       setError('Vui lòng nhập mã OTP 6 số');
       return;
@@ -80,15 +80,15 @@ const PaymentSimulation = () => {
         bankName: selectedBank.name
       });
       setStep(4);
-      
+
       setTimeout(() => {
-        navigate('/payment/complete', { 
-          state: { 
-            success: true, 
+        navigate('/payment/complete', {
+          state: {
+            success: true,
             orderData,
             transactionId: 'TXN' + Date.now(),
             bankName: selectedBank.name
-          } 
+          }
         });
       }, 2000);
     } else if (otp === '000000') {
@@ -143,12 +143,12 @@ const PaymentSimulation = () => {
       </Card.Header>
       <Card.Body>
         {error && <Alert variant="danger">{error}</Alert>}
-        
+
         <Row className="g-3">
           {banks.map(bank => (
             <Col key={bank.id} xs={6} md={3}>
-              <Card 
-                className={h-100 cursor-pointer ${selectedBank?.id === bank.id ? 'border-primary border-2' : ''}}
+              <Card
+                className={`h-100 cursor-pointer ${selectedBank?.id === bank.id ? 'border-primary border-2' : ''}`}
                 style={{ cursor: 'pointer' }}
                 onClick={() => handleBankSelect(bank)}
               >
@@ -181,8 +181,8 @@ const PaymentSimulation = () => {
             <FaArrowLeft className="me-2" />
             Quay lại
           </Button>
-          <Button 
-            variant="primary" 
+          <Button
+            variant="primary"
             onClick={handleProceedToOTP}
             disabled={!selectedBank}
           >
@@ -229,7 +229,7 @@ const PaymentSimulation = () => {
           </Form.Group>
 
           <Alert variant="warning" className="small">
-            <strong>Demo:</strong> Nhập <code>123456</code> hoặc <code>111111</code> để thanh toán thành công, 
+            <strong>Demo:</strong> Nhập <code>123456</code> hoặc <code>111111</code> để thanh toán thành công,
             <code>000000</code> để giả lập thất bại.
           </Alert>
 
@@ -239,16 +239,16 @@ const PaymentSimulation = () => {
               Quay lại
             </Button>
             <div>
-              <Button 
-                variant="link" 
+              <Button
+                variant="link"
                 onClick={handleResendOTP}
                 disabled={countdown > 0}
                 className="me-2"
               >
                 Gửi lại OTP
               </Button>
-              <Button 
-                variant="primary" 
+              <Button
+                variant="primary"
                 type="submit"
                 disabled={otp.length < 6}
               >

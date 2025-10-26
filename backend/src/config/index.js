@@ -1,14 +1,3 @@
-/**
- * 🔧 Centralized Configuration Module
- * 
- * Tự động load environment variables theo NODE_ENV:
- * - local: .env.local
- * - docker: .env.docker  
- * - production: .env.production
- * 
- * Priority: .env.[NODE_ENV] > .env.local > .env
- */
-
 require('dotenv-flow').config();
 
 // Auto-detect environment if not set
