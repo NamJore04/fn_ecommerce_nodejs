@@ -24,7 +24,7 @@ This is a comprehensive e-commerce website built for selling computers and compu
 
 
 
-\### \*\*🎯 Current Status: LEVEL 3 COMPLETE ✅\*\*
+\### \*\*🎯 Present Status: LEVEL 3 COMPLETE ✅\*\*
 
 \- ✅ \*\*Level 1\*\*: Basic Docker Compose deployment
 
