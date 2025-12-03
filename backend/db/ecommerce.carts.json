@@ -1,0 +1,721 @@
+[{
+	"_id": {
+		"$oid": "68ecc91761952302bbe09d46"
+	},
+	"sessionId": "guest_8bhc25wxs_1760348387890",
+	"subtotal": 134940000,
+	"tax": 13494000,
+	"shipping": 0,
+	"discount": 0,
+	"total": 148434000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": [
+		{
+			"product": {
+				"$oid": "68e7caa2de8d916fbbeef5bf"
+			},
+			"variant": "68ec73664a4c7c8b62fc9551",
+			"quantity": 1,
+			"price": 5500000,
+			"_id": {
+				"$oid": "68ecc91c61952302bbe09e1c"
+			},
+			"addedAt": null
+		},
+		{
+			"product": {
+				"$oid": "68e7caa2de8d916fbbeef5b6"
+			},
+			"variant": "68ec793c4a4c7c8b62fc9db4",
+			"quantity": 1,
+			"price": 16590000,
+			"_id": {
+				"$oid": "68ecc91c61952302bbe09e2c"
+			},
+			"addedAt": null
+		},
+		{
+			"product": {
+				"$oid": "68e7caa2de8d916fbbeef5b0"
+			},
+			"variant": "68ec7a7b4a4c7c8b62fc9e1e",
+			"quantity": 1,
+			"price": 62990000,
+			"_id": {
+				"$oid": "68ecc91d61952302bbe09e42"
+			},
+			"addedAt": null
+		},
+		{
+			"product": {
+				"$oid": "68e7caa2de8d916fbbeef5ad"
+			},
+			"variant": "68ec7b6c4a4c7c8b62fc9e8e",
+			"quantity": 1,
+			"price": 49860000,
+			"_id": {
+				"$oid": "68ecc91d61952302bbe09e5e"
+			},
+			"addedAt": null
+		}
+	],
+	"createdAt": {
+		"$date": "2025-10-30T04:39:16.885Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:39:16.885Z"
+	},
+	"expiresAt": null,
+	"__v": 4
+},
+{
+	"_id": {
+		"$oid": "68eccbdb61952302bbe0a46b"
+	},
+	"sessionId": "guest_8kmz1iv4v_1760348907114",
+	"subtotal": 0,
+	"tax": 0,
+	"shipping": 50000,
+	"discount": 0,
+	"total": 50000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": null,
+	"createdAt": {
+		"$date": "2025-10-30T04:39:16.888Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:39:16.888Z"
+	},
+	"expiresAt": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "68eccfe661952302bbe0aa6a"
+	},
+	"sessionId": "Rf7BWRov-TFjDMIVLqZolFPmM9dG-qMa",
+	"subtotal": 0,
+	"tax": 0,
+	"shipping": 50000,
+	"discount": 0,
+	"total": 50000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": null,
+	"createdAt": {
+		"$date": "2025-10-30T04:39:16.889Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:39:16.889Z"
+	},
+	"expiresAt": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "68eccfea61952302bbe0aa6d"
+	},
+	"sessionId": "OyN0a2pCcrI12iyVAMl_TnYeLySHdTew",
+	"subtotal": 0,
+	"tax": 0,
+	"shipping": 50000,
+	"discount": 0,
+	"total": 50000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": null,
+	"createdAt": {
+		"$date": "2025-10-30T04:39:16.89Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:39:16.89Z"
+	},
+	"expiresAt": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "68eccff361952302bbe0aa72"
+	},
+	"sessionId": "guest_ktujo9umj_1760349689547",
+	"subtotal": 0,
+	"tax": 0,
+	"shipping": 50000,
+	"discount": 0,
+	"total": 50000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": null,
+	"createdAt": {
+		"$date": "2025-10-30T04:39:16.891Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:39:16.891Z"
+	},
+	"expiresAt": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "68ecd3f5541095fb38d9a3eb"
+	},
+	"sessionId": "ILSz620tZszQZyPVcdyBeGgWuLV-0WLf",
+	"subtotal": 0,
+	"tax": 0,
+	"shipping": 50000,
+	"discount": 0,
+	"total": 50000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": null,
+	"createdAt": {
+		"$date": "2025-10-30T04:39:16.892Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:39:16.892Z"
+	},
+	"expiresAt": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "68ecd3f5541095fb38d9a3ee"
+	},
+	"sessionId": "9MNtDB9Fjpbt8iVFRigP_AMQJ8-uBjJn",
+	"subtotal": 0,
+	"tax": 0,
+	"shipping": 50000,
+	"discount": 0,
+	"total": 50000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": null,
+	"createdAt": {
+		"$date": "2025-10-30T04:39:16.894Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:39:16.894Z"
+	},
+	"expiresAt": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "68ecd3fd541095fb38d9a3f3"
+	},
+	"sessionId": "guest_kielj343g_1760350243734",
+	"subtotal": 0,
+	"tax": 0,
+	"shipping": 50000,
+	"discount": 0,
+	"total": 50000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": null,
+	"createdAt": {
+		"$date": "2025-10-30T04:39:16.895Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:39:16.895Z"
+	},
+	"expiresAt": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "68ece2f8541095fb38d9abc5"
+	},
+	"sessionId": "guest_g2pnamesp_1760351308672",
+	"subtotal": 0,
+	"tax": 0,
+	"shipping": 50000,
+	"discount": 0,
+	"total": 50000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": null,
+	"createdAt": {
+		"$date": "2025-10-30T04:39:16.896Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:39:16.896Z"
+	},
+	"expiresAt": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "68ece8f6c9a7e08a4f8ba512"
+	},
+	"sessionId": "guest_jvp624fu4_1760355180448",
+	"subtotal": 0,
+	"tax": 0,
+	"shipping": 50000,
+	"discount": 0,
+	"total": 50000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": null,
+	"createdAt": {
+		"$date": "2025-10-30T04:39:16.896Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:39:16.896Z"
+	},
+	"expiresAt": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "68ecfa60fadab8bd0e0bcf0f"
+	},
+	"sessionId": "guest_3jmpbfh7z_1760361055929",
+	"subtotal": 0,
+	"tax": 0,
+	"shipping": 50000,
+	"discount": 0,
+	"total": 50000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": null,
+	"createdAt": {
+		"$date": "2025-10-30T04:39:16.897Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:39:16.897Z"
+	},
+	"expiresAt": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6902ec4ccf59557ca82c0836"
+	},
+	"sessionId": "nmzMbCwW336QUG96madR-O1wcM9BKbTl",
+	"subtotal": 55990000,
+	"tax": 5599000,
+	"shipping": 0,
+	"discount": 0,
+	"total": 61589000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": [
+		{
+			"product": {
+				"$oid": "68e7caa2de8d916fbbeef5a6"
+			},
+			"variant": {
+				"$oid": "68e7caa2de8d916fbbeef5a8"
+			},
+			"quantity": 1,
+			"price": 55990000,
+			"_id": {
+				"$oid": "6902ec4ccf59557ca82c0838"
+			},
+			"addedAt": {
+				"$date": "2025-10-30T04:40:44.362Z"
+			}
+		}
+	],
+	"createdAt": {
+		"$date": "2025-10-30T04:40:44.358Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:40:44.363Z"
+	},
+	"expiresAt": {
+		"$date": "2025-11-29T04:40:44.358Z"
+	},
+	"__v": 1
+},
+{
+	"_id": {
+		"$oid": "6902ed0ed16b492f5f26c517"
+	},
+	"sessionId": "rc1YBHFafEQ6ci8fPhT7ULIxxeB5pPeF",
+	"subtotal": 5980000,
+	"tax": 598000,
+	"shipping": 0,
+	"discount": 0,
+	"total": 6578000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": [
+		{
+			"product": {
+				"$oid": "68e7caa2de8d916fbbeef5c2"
+			},
+			"variant": {
+				"$oid": "68e7caa2de8d916fbbeef5c3"
+			},
+			"quantity": 2,
+			"price": 2990000,
+			"_id": {
+				"$oid": "6902ed0ed16b492f5f26c519"
+			},
+			"addedAt": {
+				"$date": "2025-10-30T04:43:58.766Z"
+			}
+		}
+	],
+	"createdAt": {
+		"$date": "2025-10-30T04:43:58.761Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:43:58.768Z"
+	},
+	"expiresAt": {
+		"$date": "2025-11-29T04:43:58.761Z"
+	},
+	"__v": 1
+},
+{
+	"_id": {
+		"$oid": "6902ed1e31fa9edcdeb7eefb"
+	},
+	"user": {
+		"$oid": "6902ece531fa9edcdeb7ee96"
+	},
+	"subtotal": 55990000,
+	"tax": 5599000,
+	"shipping": 0,
+	"discount": 0,
+	"total": 61589000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": [
+		{
+			"product": {
+				"$oid": "68e7caa2de8d916fbbeef5a6"
+			},
+			"variant": {
+				"$oid": "68e7caa2de8d916fbbeef5a8"
+			},
+			"quantity": 1,
+			"price": 55990000,
+			"_id": {
+				"$oid": "6902ed1e31fa9edcdeb7eefd"
+			},
+			"addedAt": {
+				"$date": "2025-10-30T04:44:14.075Z"
+			}
+		}
+	],
+	"createdAt": {
+		"$date": "2025-10-30T04:44:14.071Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:44:14.077Z"
+	},
+	"expiresAt": {
+		"$date": "2025-11-06T04:44:14.071Z"
+	},
+	"__v": 1
+},
+{
+	"_id": {
+		"$oid": "6902ee9e78a806be5058d5c8"
+	},
+	"sessionId": "vI3-puQerDw5tIsUtIAZ5xJKDr8G57pD",
+	"subtotal": 55990000,
+	"tax": 5599000,
+	"shipping": 0,
+	"discount": 0,
+	"total": 61589000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": [
+		{
+			"product": {
+				"$oid": "68e7caa2de8d916fbbeef5a6"
+			},
+			"variant": {
+				"$oid": "68e7caa2de8d916fbbeef5a8"
+			},
+			"quantity": 1,
+			"price": 55990000,
+			"_id": {
+				"$oid": "6902ee9e78a806be5058d5ca"
+			},
+			"addedAt": {
+				"$date": "2025-10-30T04:50:38.344Z"
+			}
+		}
+	],
+	"createdAt": {
+		"$date": "2025-10-30T04:50:38.335Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T04:50:38.347Z"
+	},
+	"expiresAt": {
+		"$date": "2025-11-29T04:50:38.335Z"
+	},
+	"__v": 1
+},
+{
+	"_id": {
+		"$oid": "6902f44fc8afa4926efba49b"
+	},
+	"sessionId": "guest_t9m3zu14i_1761710519331",
+	"subtotal": 8970000,
+	"tax": 897000,
+	"shipping": 0,
+	"discount": 0,
+	"total": 9867000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": [
+		{
+			"product": {
+				"$oid": "68e7caa2de8d916fbbeef5c2"
+			},
+			"variant": {
+				"$oid": "68e7caa2de8d916fbbeef5c3"
+			},
+			"quantity": 3,
+			"price": 2990000,
+			"_id": {
+				"$oid": "6902f452c8afa4926efba4a6"
+			},
+			"addedAt": {
+				"$date": "2025-10-30T05:14:58.638Z"
+			}
+		}
+	],
+	"createdAt": {
+		"$date": "2025-10-30T05:14:55.583Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T05:15:03.421Z"
+	},
+	"expiresAt": {
+		"$date": "2025-11-29T05:14:55.586Z"
+	},
+	"__v": 1
+},
+{
+	"_id": {
+		"$oid": "6902f466166c7a4d7b584e06"
+	},
+	"user": {
+		"$oid": "68e7cbaac8d4bc217fceacdc"
+	},
+	"subtotal": 0,
+	"tax": 0,
+	"shipping": 50000,
+	"discount": 0,
+	"total": 50000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": [],
+	"createdAt": {
+		"$date": "2025-10-30T05:15:18.703Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T05:18:46.35Z"
+	},
+	"expiresAt": {
+		"$date": "2025-11-06T05:15:18.703Z"
+	},
+	"__v": 3,
+	"discountValue": 0
+},
+{
+	"_id": {
+		"$oid": "6902f466c8afa4926efba4c2"
+	},
+	"user": {
+		"$oid": "68e7cbaac8d4bc217fceacdc"
+	},
+	"items": [
+		{
+			"product": {
+				"$oid": "68e7caa2de8d916fbbeef5c2"
+			},
+			"variant": {
+				"$oid": "68e7caa2de8d916fbbeef5c3"
+			},
+			"quantity": 3,
+			"price": 2990000,
+			"addedAt": {
+				"$date": "2025-10-30T05:14:58.638Z"
+			},
+			"_id": {
+				"$oid": "6902f452c8afa4926efba4a6"
+			}
+		}
+	],
+	"subtotal": 8970000,
+	"tax": 897000,
+	"shipping": 0,
+	"discount": 0,
+	"total": 9867000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"createdAt": {
+		"$date": "2025-10-30T05:15:18.708Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T05:15:18.709Z"
+	},
+	"expiresAt": {
+		"$date": "2025-11-06T05:15:18.708Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6902f47678a806be5058d6e6"
+	},
+	"sessionId": "se6vYt8EGhbSOsgsl4HZz_C3FE45F0bm",
+	"subtotal": 55990000,
+	"tax": 5599000,
+	"shipping": 0,
+	"discount": 0,
+	"total": 61589000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": [
+		{
+			"product": {
+				"$oid": "68e7caa2de8d916fbbeef5a6"
+			},
+			"variant": {
+				"$oid": "68e7caa2de8d916fbbeef5a8"
+			},
+			"quantity": 1,
+			"price": 55990000,
+			"_id": {
+				"$oid": "6902f47678a806be5058d6e8"
+			},
+			"addedAt": {
+				"$date": "2025-10-30T05:15:34.115Z"
+			}
+		}
+	],
+	"createdAt": {
+		"$date": "2025-10-30T05:15:34.111Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T05:15:34.117Z"
+	},
+	"expiresAt": {
+		"$date": "2025-11-29T05:15:34.111Z"
+	},
+	"__v": 1
+},
+{
+	"_id": {
+		"$oid": "6902f487c8afa4926efba545"
+	},
+	"sessionId": "M9Q8fRnVXLk7tjrIM__MGzT5-IOhPuoe",
+	"subtotal": 55990000,
+	"tax": 5599000,
+	"shipping": 0,
+	"discount": 0,
+	"total": 61589000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": [
+		{
+			"product": {
+				"$oid": "68e7caa2de8d916fbbeef5a6"
+			},
+			"variant": {
+				"$oid": "68e7caa2de8d916fbbeef5a8"
+			},
+			"quantity": 1,
+			"price": 55990000,
+			"_id": {
+				"$oid": "6902f487c8afa4926efba547"
+			},
+			"addedAt": {
+				"$date": "2025-10-30T05:15:51.539Z"
+			}
+		}
+	],
+	"createdAt": {
+		"$date": "2025-10-30T05:15:51.536Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T05:15:51.54Z"
+	},
+	"expiresAt": {
+		"$date": "2025-11-29T05:15:51.536Z"
+	},
+	"__v": 1
+},
+{
+	"_id": {
+		"$oid": "6902f7fe166c7a4d7b584f45"
+	},
+	"sessionId": "guest_gfcm5rqfj_1761802238950",
+	"subtotal": 0,
+	"tax": 0,
+	"shipping": 50000,
+	"discount": 0,
+	"total": 50000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": [],
+	"createdAt": {
+		"$date": "2025-10-30T05:30:38.962Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T05:30:38.963Z"
+	},
+	"expiresAt": {
+		"$date": "2025-11-29T05:30:38.962Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6902f820166c7a4d7b584f95"
+	},
+	"sessionId": "guest_5z37tq081_1761802272237",
+	"subtotal": 0,
+	"tax": 0,
+	"shipping": 50000,
+	"discount": 0,
+	"total": 50000,
+	"discountType": "percentage",
+	"loyaltyPointsUsed": 0,
+	"isActive": true,
+	"items": [],
+	"createdAt": {
+		"$date": "2025-10-30T05:31:12.251Z"
+	},
+	"updatedAt": {
+		"$date": "2025-10-30T05:31:12.252Z"
+	},
+	"expiresAt": {
+		"$date": "2025-11-29T05:31:12.251Z"
+	},
+	"__v": 0
+}]
+
