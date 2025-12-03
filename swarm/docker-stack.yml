@@ -1,15 +1,3 @@
-# Docker Swarm Stack Configuration for E-commerce Project
-# Deploy with: docker stack deploy -c docker-stack.yml ecommerce
-# 
-# This stack file is configured for Level 3 deployment with:
-# - Multi-replica services (Backend: 3, Frontend: 2, Worker: 2)
-# - Load balancing via Nginx
-# - Redis queue for async job processing
-# - Overlay network for service discovery
-# - Health checks for all services
-# - Resource limits and restart policies
-# - Docker Secrets for sensitive data
-
 version: '3.8'
 
 services:
@@ -76,6 +64,7 @@ services:
       - NODE_ENV=docker
     volumes:
       - backend-uploads:/app/uploads
+      - ../db:/app/db
     networks:
       - ecommerce-network
     deploy:
